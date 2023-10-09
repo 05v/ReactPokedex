@@ -52,6 +52,12 @@ body {
   background-color: rgb(17, 172, 224);
 }
 
+.pokedex__result {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .pokedex__title {
   display: flex;
   flex-direction: row;
@@ -65,6 +71,7 @@ body {
   color: black;
   font-family: 'Fira Sans', sans-serif;
   font-weight: 400;
+  text-transform: capitalize;
 }
 
 .pokedex__number {
@@ -184,6 +191,7 @@ body {
 .pokedex__infographic {
   color: black;
   font-size: 1.75rem;
+  text-transform: capitalize;
 }
 
 .pokedex__infogenders {
@@ -235,6 +243,7 @@ body {
   align-items: center;
   border-radius: 5%;
   color: white;
+  text-transform: capitalize;
 }
 
 .pokedex__label--normal {
