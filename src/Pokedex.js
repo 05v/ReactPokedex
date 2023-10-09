@@ -5,6 +5,7 @@ function Pokedex() {
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonData, setPokemonData] = useState(null);
   const [flavorText, setFlavorText] = useState("");
+  const [gender, setGender] = useState(null);
 
   const handleInputChange = (event) => {
     setPokemonName(event.target.value);
@@ -22,6 +23,7 @@ function Pokedex() {
           const data = await response.json();
           setPokemonData(data);
           fetchFlavorText(data.id);
+          fetchGenderData();
         } else {
           console.error("Error fetching Pokemon data");
         }
@@ -53,6 +55,23 @@ function Pokedex() {
       }
     } catch (error) {
       console.error("Error fetching flavor text:", error);
+    }
+  };
+
+  const fetchGenderData = async () => {
+    if (pokemonData && pokemonData.species) {
+      const speciesUrl = pokemonData.species.url;
+      try {
+        const response = await fetch(speciesUrl);
+        if (response.ok) {
+          const data = await response.json();
+          setGender(data.gender_rate);
+        } else {
+          console.error("Error fetching gender data");
+        }
+      } catch (error) {
+        console.error("Error fetching gender data:", error);
+      }
     }
   };
 
@@ -159,8 +178,9 @@ function Pokedex() {
 
               <div className="pokedex__versions">
                 <p className="pokedex__versionsTitle">Versions:</p>
-                <i className="fa-solid fa-mars pokedex__male pokedex__gender"></i>
+                <i className="fa-solid fa-mars pokedex__male"></i>
                 <i className="fa-solid fa-venus pokedex__female"></i>
+                <i className="fa-solid fa-genderless pokedex__genderless"></i>
               </div>
 
               <div className="pokedex__info">
@@ -182,8 +202,22 @@ function Pokedex() {
                   <span className="pokedex__infotext">
                     <p className="pokedex__subtitle">Gender</p>
                     <div className="pokedex__infogenders">
-                      <i className="fa-solid fa-mars pokedex__infogenders--male"></i>
-                      <i className="fa-solid fa-venus pokedex__infogenders--female"></i>
+                      {gender !== null && (
+                        <>
+                          {gender === -1 && (
+                            <i className="fa-solid fa-genderless pokedex__infogenders--genderless"></i>
+                          )}
+                          {gender === 0 && (
+                            <i className="fa-solid fa-venus pokedex__infogenders--female"></i>
+                          )}
+                          {gender !== -1 && gender !== 0 && (
+                            <>
+                              <i className="fa-solid fa-venus pokedex__infogenders--female"></i>
+                              <i className="fa-solid fa-mars pokedex__infogenders--male"></i>
+                            </>
+                          )}
+                        </>
+                      )}
                     </div>
                   </span>
                 </div>
