@@ -76,17 +76,25 @@ function Pokedex() {
           <div class="pokedex__labels">
             <p class="pokedex__labeltitle">Type</p>
             <div class="pokedex__types">
-              <span class="pokedex__label">Flying</span>
-              <span class="pokedex__label">Fighting</span>
+              <span class="pokedex__label pokedex__label--flying">Flying</span>
+              <span class="pokedex__label pokedex__label--fighting">
+                Fighting
+              </span>
             </div>
 
             <p class="pokedex__labeltitle">Weaknesses</p>
             <div class="pokedex__weaknesses">
-              <span class="pokedex__label">Psychic</span>
-              <span class="pokedex__label">Fighting</span>
-              <span class="pokedex__label">Fairy</span>
-              <span class="pokedex__label">Electric</span>
-              <span class="pokedex__label">Ice</span>
+              <span class="pokedex__label pokedex__label--psychic">
+                Psychic
+              </span>
+              <span class="pokedex__label pokedex__label--fighting">
+                Fighting
+              </span>
+              <span class="pokedex__label pokedex__label--fairy">Fairy</span>
+              <span class="pokedex__label pokedex__label--electric">
+                Electric
+              </span>
+              <span class="pokedex__label pokedex__label--ice">Ice</span>
             </div>
           </div>
         </div>

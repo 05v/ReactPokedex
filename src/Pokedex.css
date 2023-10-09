@@ -234,6 +234,7 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 5%;
+  color: white;
 }
 
 .pokedex__label--normal {
