@@ -3,6 +3,11 @@ import "./Pokedex.css";
 function Pokedex() {
   return (
     <section class="pokedex">
+      <form class="pokedex__search">
+        <input class="pokedex__searchbar" placeholder="Pikachu"></input>
+        <input class="pokedex__submit" type="submit" value="Search"></input>
+      </form>
+
       <span class="pokedex__title">
         <h1 class="pokedex__name">Flamingo</h1>
         <p class="pokedex__number">#0937</p>

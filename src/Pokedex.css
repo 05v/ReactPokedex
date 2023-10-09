@@ -20,6 +20,38 @@ body {
   gap: 4rem;
 }
 
+.pokedex__search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.pokedex__searchbar {
+  font-size: 2rem;
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 3px;
+}
+
+.pokedex__submit {
+  padding: 1.4rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  font-size: 1.5rem;
+  background-color: rgb(14, 158, 206);
+  color: ghostwhite;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  border-radius: 3px;
+  border: none;
+}
+
+.pokedex__submit:hover {
+  cursor: pointer;
+  background-color: rgb(17, 172, 224);
+}
+
 .pokedex__title {
   display: flex;
   flex-direction: row;
